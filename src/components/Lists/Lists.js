@@ -1,13 +1,8 @@
 
 import { useEffect, useState } from 'react';
-import axios from 'axios';
 import MovieList from './MovieList';
 import MovieListHeading from './MovieListHeading';
 import SearchBox from '../SearchBox';
-
-const api=axios.create({
-	baseURL: 'http://www.omdbapi.com/?i=tt3896198&apikey=de2f2cf3'
-})
 
 export function Lists() {
 
