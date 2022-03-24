@@ -32,9 +32,11 @@ export function Lists() {
         <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
       </div>
 
-			<div className="grid p-6 grid-cols-3 gap-4">	
-				<MovieList movies={movies}/>
-			</div>
+	  <div className="container my-12 mx-auto px-4 md:px-12">
+        <div className="flex flex-wrap -mx-1 lg:-mx-4">				
+			<MovieList movies={movies}/>
+		</div>
+		</div>
 		</>
 	)
 };

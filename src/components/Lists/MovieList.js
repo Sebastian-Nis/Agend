@@ -3,19 +3,51 @@ import React from "react";
 const MovieList=(props)=>{
 	return(
 		<>
-			{props.movies.map((movie,index)=>
-				<div className="bg-white sm:flex justify-center items-center h-screen">
-          <div className="md:flex shadow-lg  items-center justify-between bg-white rounded-lg p-6">
-            <div className="w-4/12 -m-10">
-              <img className=" rounded rounded-r-none" src="{movie.Poster}"/>
-            </div>
-            <div className="text-center">
-              <h2 className="text-lg">{movie.Title}</h2>
-              <div className="text-purple-500">{movie.Year}</div>
-              <div className="text-gray-600">{movie.imdbRating}</div>
-            </div>
+			{props.movies.map((movie,index)=>{
+        if ((movie.Poster)===("N/A"))
+          return(<></>)
+        else
+          return(
+
+        
+<>    
+          <div className="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
+  
+            
+              <article className="overflow-hidden rounded-lg shadow-lg">
+  
+                  <a href="#">
+                      <img alt="Placeholder" className="block h-auto w-full" src={movie.Poster}/>
+                  </a>
+  
+                  <header className="flex items-center justify-between leading-tight p-2 md:p-4">
+                      <h1 className="text-lg">
+                          <a className="no-underline hover:underline text-black" href="#">
+                              {movie.Title}
+                          </a>
+                      </h1>
+                      <p className="text-grey-darker text-sm">
+                          {movie.Year}
+                      </p>
+                  </header>
+  
+                  <div className="flex items-center justify-between p-2 md:p-4">
+                      <a className="flex items-center no-underline hover:underline text-black" href="#">
+                          <p className="ml-2 text-sm">{movie.Director}</p>
+                      </a>
+                      <a className="no-underline text-grey-darker hover:text-red-dark" href="#">
+                          <span className="hidden">{movie.Year}</span>
+                      </a>
+                  </div>
+  
+              </article>
+             
+  
           </div>
-        </div>
+
+          </>          
+          )
+      } 
 			)}
 		</>
 )};
