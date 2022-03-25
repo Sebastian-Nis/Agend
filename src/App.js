@@ -24,7 +24,10 @@ export function App() {
           <div className="xl:block xl:w-1/3">
             <div className="flex items-center justify-end">
               <Link to="/login" className="inline-block py-2 px-4 mr-2 leading-5 text-coolGray-500 hover:text-coolGray-900 bg-transparent font-medium rounded-md" href="#">Log In</Link>
+              <div>
               <Link to="/signup" className="inline-block py-2 px-4 text-sm leading-5 text-green-50 bg-green-500 hover:bg-green-600 font-medium focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 rounded-md" href="#">Sign Up</Link>
+              
+              </div>
             </div>
           </div>
         </div>
