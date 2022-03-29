@@ -1,14 +1,25 @@
-import firebase from 'firebase/compat/app'
-import"firebase/compat/auth"
+// import firebase from 'firebase/compat/app'
+// import"firebase/compat/auth"
 
-const app = firebase.initializeApp({
-  apiKey: process.env.RAF_RAF_apiKey,
-  authDomain: process.env.RAF_authDomain,
-  projectId: process.env.RAF_projectId,
-  storageBucket: process.env.RAF_storageBucket,
-  messagingSenderId: process.env.RAF_messagingSenderId,
-  appId: process.env.RAF_appId
-})
+import { initializeApp } from "firebase/app"
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth"
 
-export  const auth=app.auth()
-export default app
+const firebaseConfig = {
+  apiKey: "AIzaSyBxUWC9iZOMHNYssgAPNwya-M92h6cKchU",
+  authDomain: "agend-dev.firebaseapp.com",
+  projectId: "agend-dev",
+  storageBucket: "agend-dev.appspot.com",
+  messagingSenderId: "292370568852",
+  appId: "1:292370568852:web:e98ee84a0b100010b08681"
+}
+
+// export  const auth=app.auth()
+// export default app
+
+const app=initializeApp(firebaseConfig);
+const auth = getAuth();
+
+export function signup(email,password){
+  return createUserWithEmailAndPassword(auth,email,password);
+}
+
